@@ -9,9 +9,11 @@ import SwiftUI
 
 public struct WelcomeView: View {
     public let title: String
+    public let subTitle: String
 
-    public init(title: String) {
+    public init(title: String, subTitle: String) {
         self.title = title
+        self.subTitle = subTitle
     }
 
     @available(macOS 10.15, *)
@@ -20,6 +22,11 @@ public struct WelcomeView: View {
             Text(title)
                 .font(.title)
                 .bold()
+            
+            Text(subTitle)
+                .font(.title)
+                .bold()
+            
         }
         .padding()
         .background(Color.yellow.opacity(0.2))

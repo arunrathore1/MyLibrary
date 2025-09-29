@@ -1,5 +1,5 @@
 //
-//  SwiftUIView 2.swift
+//  WelcomeView.swift
 //  MyLibrary
 //
 //  Created by Arun Rathore  on 29/09/25.
@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct SwiftUIView_2: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+public struct WelcomeView: View {
+    public let title: String
 
-#Preview {
-    SwiftUIView_2()
+    public init(title: String) {
+        self.title = title
+    }
+
+    @available(macOS 10.15, *)
+    public var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.title)
+                .bold()
+        }
+        .padding()
+        .background(Color.yellow.opacity(0.2))
+        .cornerRadius(8)
+    }
 }

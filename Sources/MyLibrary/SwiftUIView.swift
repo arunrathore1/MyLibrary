@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public struct HelloView: View {
+    public let name: String
+    public init(name: String) {
+        self.name = name
     }
-}
-
-#Preview {
-    SwiftUIView()
+    @available(macOS 10.15, *)
+    public var body: some View {
+        Text("Hello\(name)")
+            .font(.headline)
+            .padding()
+    }
 }
